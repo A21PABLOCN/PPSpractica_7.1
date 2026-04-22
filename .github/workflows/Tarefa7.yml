@@ -16,3 +16,14 @@ jobs:
         run: npm ci
       - name: Lanzar tests
         run: npm test
+
+  despregamento:
+    needs: instalacion
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+      - name: Todo correcto
+        run: echo "Despregamento completado"
